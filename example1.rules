@@ -1,0 +1,4 @@
+@prefix pre <urn:x-hp:eg/>.
+
+[rulePCHasCPU: (?p pre:hasMotherBoard ?m) (?m pre:hasCPU ?c) -> (?p pre:pchasCPU ?c)]
+[rulePCHasRAM: (?p pre:hasMotherBoard ?m) (?m pre:hasRAM ?r) -> (?p pre:pchasRAM ?r)]

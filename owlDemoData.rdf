@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="urn:x-hp:eg/"
+     xml:base="urn:x-hp:eg/"
+     xmlns:eg="urn:x-hp:eg/"
+     xmlns:ont="urn:x-hp:eg/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:x-hp:eg/hasCPU -->
+
+    <owl:AnnotationProperty rdf:about="urn:x-hp:eg/hasCPU"/>
+    
+
+
+    <!-- urn:x-hp:eg/hasRAM -->
+
+    <owl:AnnotationProperty rdf:about="urn:x-hp:eg/hasRAM"/>
+    
+
+
+    <!-- urn:x-hp:eg/pchasCPU -->
+
+    <owl:AnnotationProperty rdf:about="urn:x-hp:eg/pchasCPU"/>
+    
+
+
+    <!-- urn:x-hp:eg/pchasRAM -->
+
+    <owl:AnnotationProperty rdf:about="urn:x-hp:eg/pchasRAM"/>
+    
+
+
+    <!-- urn:x-hp:eg/hasBundle -->
+
+    <owl:AnnotationProperty rdf:about="urn:x-hp:eg/hasBundle"/>
+    
+
+
+    <!-- urn:x-hp:eg/hasGraphics -->
+
+    <owl:AnnotationProperty rdf:about="urn:x-hp:eg/hasGraphics"/>
+    
+
+
+    <!-- urn:x-hp:eg/hasMotherBoard -->
+
+    <owl:AnnotationProperty rdf:about="urn:x-hp:eg/hasMotherBoard"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:x-hp:eg/Computer -->
+
+    <owl:Class rdf:about="urn:x-hp:eg/Computer"/>
+    
+
+
+    <!-- urn:x-hp:eg/GameBundle -->
+
+    <owl:Class rdf:about="urn:x-hp:eg/GameBundle"/>
+    
+
+
+    <!-- urn:x-hp:eg/GamingComputer -->
+
+    <owl:Class rdf:about="urn:x-hp:eg/GamingComputer"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:x-hp:eg/i5 -->
+
+    <owl:NamedIndividual rdf:about="urn:x-hp:eg/i5"/>
+    
+
+
+    <!-- urn:x-hp:eg/16GB_2666 -->
+
+    <owl:NamedIndividual rdf:about="urn:x-hp:eg/16GB_2666"/>
+    
+
+
+    <!-- urn:x-hp:eg/actionPack -->
+
+    <owl:NamedIndividual rdf:about="urn:x-hp:eg/actionPack">
+        <rdf:type rdf:resource="urn:x-hp:eg/GameBundle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:x-hp:eg/alienBox51 -->
+
+    <owl:NamedIndividual rdf:about="urn:x-hp:eg/alienBox51">
+        <rdf:type rdf:resource="urn:x-hp:eg/GamingComputer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:x-hp:eg/bigName42 -->
+
+    <owl:NamedIndividual rdf:about="urn:x-hp:eg/bigName42">
+        <rdf:type rdf:resource="urn:x-hp:eg/Computer"/>
+        <hasBundle rdf:resource="urn:x-hp:eg/binNameSpecialBundle"/>
+        <hasMotherBoard rdf:resource="urn:x-hp:eg/bigNameSpecialMB"/>
+        <hasMotherBoard rdf:resource="urn:x-hp:eg/nForce2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:x-hp:eg/bigNameSpecialMB -->
+
+    <owl:NamedIndividual rdf:about="urn:x-hp:eg/bigNameSpecialMB">
+        <ont:hasCPU rdf:resource="urn:x-hp:eg/i5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:x-hp:eg/nForce2 -->
+
+    <owl:NamedIndividual rdf:about="urn:x-hp:eg/nForce2">
+        <ont:hasRAM rdf:resource="urn:x-hp:eg/16GB_2666"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:x-hp:eg/whiteBoxZX -->
+
+    <owl:NamedIndividual rdf:about="urn:x-hp:eg/whiteBoxZX">
+        <rdf:type rdf:resource="urn:x-hp:eg/Computer"/>
+        <hasBundle rdf:resource="urn:x-hp:eg/actionPack"/>
+        <hasMotherBoard rdf:resource="urn:x-hp:eg/nForce"/>
+        <hasMotherBoard rdf:resource="urn:x-hp:eg/unknownMB"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:x-hp:eg/unknownMB">
+        <hasGraphics rdf:resource="urn:x-hp:eg/gamingGraphics"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="urn:x-hp:eg/bigNameSpecialMB"/>
+            <rdf:Description rdf:about="urn:x-hp:eg/nForce2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
