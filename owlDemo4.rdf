@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17"
+     xml:base="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="urn:x-hp:eg/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasBundle -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasBundle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#Computer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasCPU -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasCPU">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasComponent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#MotherBoard"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#CPU"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasComponent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasGraphics -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasGraphics">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GraphicsCard"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasMotherboard -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasMotherboard">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasComponent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#Computer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#MotherBoard"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasRAM -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasRAM">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#hasComponent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#MotherBoard"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#RAM"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#Bundle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#Bundle"/>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#CPU -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#CPU"/>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#Computer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#Computer"/>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GameBundle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GameBundle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#Bundle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GamingComputer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GamingComputer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#Computer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GraphicsCard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GraphicsCard"/>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#MotherBoard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#MotherBoard"/>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#RAM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#RAM"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GTX1060 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GTX1060">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GraphicsCard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#RTX3080 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#RTX3080">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GraphicsCard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#asus_g510 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#asus_g510">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#MotherBoard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#gigabyte_a10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#gigabyte_a10">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#MotherBoard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#i5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#i5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#CPU"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#i7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#i7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#CPU"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#16GB_2666 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#16GB_2666">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#RAM"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#3700x -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#3700x">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#CPU"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#6800XT -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#6800XT">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#GraphicsCard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#8GB_3200 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#8GB_3200">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/1/untitled-ontology-17#RAM"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

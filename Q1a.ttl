@@ -1,0 +1,34 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://iiitd.ac.in/course/sweb/student/2019090/> .
+
+ns1:Toyota a foaf:Organization ;
+    ns1:competes ns1:Ford,
+        ns1:Hyundai,
+        ns1:Volkswagen ;
+    ns1:founder "1937 Aug 28",
+        "Kiichiro Toyoda" ;
+    ns1:location "Toyota City, Aichi, Japan" ;
+    ns1:makes ns1:Electric_Vehicles,
+        ns1:SUVs,
+        ns1:Toyota_Land_Cruiser,
+        ns1:car .
+
+ns1:body_style a foaf:LabelProperty .
+
+ns1:competes a foaf:LabelProperty .
+
+ns1:founded_on a foaf:LabelProperty .
+
+ns1:founder a foaf:LabelProperty .
+
+ns1:location a foaf:LabelProperty .
+
+ns1:makes a foaf:LabelProperty .
+
+ns1:Toyota_Land_Cruiser a ns1:car ;
+    ns1:body_style "Cab chassis",
+        "Convertible",
+        "Hardtop",
+        "Station Wagon" ;
+    ns1:sold "10 million units" .
+

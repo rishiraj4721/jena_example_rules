@@ -1,0 +1,528 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#"
+     xml:base="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#TA_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#TA_for">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#admits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#admits">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#study_at"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#employs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#employs">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Teacher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#offers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#offers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#study_at -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#study_at">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#take -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#take">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#taken_by"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#taken_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#taken_by">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#taught_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#taught_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teaches"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Teacher"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teaches">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Teacher"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#CourseID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#CourseID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#email">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Teacher"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Teacher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#number_of_courses -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#number_of_courses">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#number_of_registered_students -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#number_of_registered_students">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#number_of_students -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#number_of_students">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#number_of_teachers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#number_of_teachers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#personal_information -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#personal_information">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Teacher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#rollno -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#rollno">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Assistant_Professor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Assistant_Professor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Teacher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#BIO -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#BIO">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#BTech -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#BTech">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#CSE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#CSE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#DES -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#DES">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#ECE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#ECE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#MTH -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#MTH">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#MTech -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#MTech">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#PhD -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#PhD">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Professor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Professor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Teacher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#SSH -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#SSH">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Student">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Teacher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Teacher">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#University"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#CV -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#CV">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#CSE"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#ECE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Calculus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Calculus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#MTH"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#DL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#DL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#CSE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Game_design -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Game_design">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#CSE"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#DES"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#ML -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#ML">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#CSE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Neuroscience -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Neuroscience">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#BIO"/>
+        <taught_by rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Raj -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Raj">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#BTech"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Rishi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Rishi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#BTech"/>
+        <take rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#ML"/>
+        <name>Rishi Raj</name>
+        <rollno rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</rollno>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#S1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#S1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#MTech"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#S2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#S2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#MTech"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#S3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#S3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#BTech"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#S4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#S4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#PhD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#S5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#S5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#BTech"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Signal_processing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Signal_processing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#ECE"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Social_Society -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Social_Society">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#SSH"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Professor"/>
+        <teaches rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Neuroscience"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Assistant_Professor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Professor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Professor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#teacher5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#Assistant_Professor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#BTech"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#MTech"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/drbn/ontologies/2022/0/untitled-ontology-6#PhD"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

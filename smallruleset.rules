@@ -1,0 +1,13 @@
+@prefix CHIL: <http://www.childhealthimprints.com/NutritionalGuidelines/>.
+@prefix type: <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>.
+@prefix datatype: <http://www.w3.org/2001/XMLSchema#boolean>.
+
+[group1rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c), lessThan(?c, 26.0) -> (?a type: CHIL:Group1)]
+
+[group2rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c), lessThan(?c, 28.0),ge(?c,26.0) -> (?a type: CHIL:Group2)]
+[group3rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c), lessThan(?c, 30.0),ge(?c,28.0) -> (?a type: CHIL:Group3)]
+[group4rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c), lessThan(?c, 32.0),ge(?c,30.0) -> (?a type: CHIL:Group4)]
+[group5rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c), lessThan(?c, 35.0),ge(?c,32.0) -> (?a type: CHIL:Group5)]
+[group6rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c),  ge(?c,35.0) -> (?a type: CHIL:Group6)]
+
+
