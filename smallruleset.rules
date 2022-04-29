@@ -9,5 +9,3 @@
 [group4rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c), lessThan(?c, 32.0),ge(?c,30.0) -> (?a type: CHIL:Group4)]
 [group5rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c), lessThan(?c, 35.0),ge(?c,32.0) -> (?a type: CHIL:Group5)]
 [group6rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c),  ge(?c,35.0) -> (?a type: CHIL:Group6)]
-
-

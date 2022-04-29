@@ -18,7 +18,7 @@ import org.apache.jena.reasoner.rulesys.GenericRuleReasoner;
 import org.apache.jena.reasoner.rulesys.Rule;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.util.PrintUtil;
-
+// demo files, ontology
 public class app2{
     public static void main(String[] args){
         Model schema = RDFDataMgr.loadModel("owlDemo4.rdf");

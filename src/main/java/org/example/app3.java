@@ -20,6 +20,7 @@ import org.apache.jena.reasoner.rulesys.Rule;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.util.PrintUtil;
 
+// read 100 cases from csv file type
 public class app3{
     public static void main(String[] args){
         // Model schema = RDFDataMgr.loadModel("nutritionontology.owl");
