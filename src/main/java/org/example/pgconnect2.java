@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import org.apache.jena.ontology.Individual;
@@ -25,9 +26,9 @@ import org.apache.jena.reasoner.rulesys.FBRuleReasoner;
 
 public class pgconnect2 {
     static final String inputFileName = "NutritionOntology15Jan.owl";
-	static Property hasGestationalAgeAtBirth;
-	static Property hasFeedIntolerance;
-	static Property hasDayOfLife;
+    static Property hasGestationalAgeAtBirth;
+    static Property hasFeedIntolerance;
+    static Property hasDayOfLife;
 
     public static void main(String args[]) throws SQLException, FileNotFoundException {
         Connection con = null;
@@ -35,45 +36,51 @@ public class pgconnect2 {
         String user = "postgres";
         String password = "hellothere";
         try {
-            //  Class.forName("org.postgresql.Driver");
-            con = DriverManager.getConnection(url,user,password);
+            // Class.forName("org.postgresql.Driver");
+            con = DriverManager.getConnection(url, user, password);
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println(e.getClass().getName()+": "+e.getMessage());
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
         System.out.println("Opened database successfully");
-        // PreparedStatement pst = con.prepareStatement("SELECT * FROM apollo.nutritional_compliance ORDER BY nutritionalcompianceid ASC LIMIT 10");
+
+        // PreparedStatement pst = con.prepareStatement("SELECT * FROM
+        // apollo.nutritional_compliance ORDER BY nutritionalcompianceid ASC LIMIT 10");
         // ResultSet rs = pst.executeQuery();
 
         // while (rs.next()) {
-        //     System.out.print(rs.getInt(1));
-        //     System.out.print(": ");
-        //     System.out.println(rs.getString(2));
+        // System.out.print(rs.getInt(1));
+        // System.out.print(": ");
+        // System.out.println(rs.getString(2));
         // }
-        OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM, null);
-        InputStream in = new FileInputStream(inputFileName);
-        model.read(in, "");
-        String med = "http://www.childhealthimprints.com/NutritionalGuidelines/";
-        org.apache.jena.rdf.model.Resource r = model.getResource(med);
-        
-        hasGestationalAgeAtBirth = model.getProperty(med, "hasGestationalAgeAtBirth");
-        // System.out.println(hasGestationalAgeAtBirth.toString());
+        // OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM,
+        // null);
+        // InputStream in = new FileInputStream(inputFileName);
+        // model.read(in, "");
+        // String med = "http://www.childhealthimprints.com/NutritionalGuidelines/";
+        // org.apache.jena.rdf.model.Resource r = model.getResource(med);
 
-        List<Rule> rules = Rule.rulesFromURL("smallruleset.rules");
-        GenericRuleReasoner reasoner = (GenericRuleReasoner) GenericRuleReasonerFactory.theInstance()
-                .create(null);
-        ((FBRuleReasoner) reasoner).setRules(rules);
-        ((GenericRuleReasoner) reasoner).setMode(GenericRuleReasoner.FORWARD_RETE);
-        reasoner.setDerivationLogging(true);
+        // hasGestationalAgeAtBirth = model.getProperty(med,
+        // "hasGestationalAgeAtBirth");
+        // // System.out.println(hasGestationalAgeAtBirth.toString());
 
-        InfModel inf = ModelFactory.createInfModel(reasoner, model);
-        // System.out.println(inf.toString());
-        listobjects(inf);
+        // List<Rule> rules = Rule.rulesFromURL("smallruleset.rules");
+        // GenericRuleReasoner reasoner = (GenericRuleReasoner)
+        // GenericRuleReasonerFactory.theInstance()
+        // .create(null);
+        // ((FBRuleReasoner) reasoner).setRules(rules);
+        // ((GenericRuleReasoner) reasoner).setMode(GenericRuleReasoner.FORWARD_RETE);
+        // reasoner.setDerivationLogging(true);
+
+        // InfModel inf = ModelFactory.createInfModel(reasoner, model);
+        // // System.out.println(inf.toString());
+        // listobjects(inf);
     }
-    static void listobjects(InfModel model){
+
+    static void listobjects(InfModel model) {
         StmtIterator ni = model.listStatements();
-        while(ni.hasNext()){
+        while (ni.hasNext()) {
             System.out.println(ni.next());
         }
     }

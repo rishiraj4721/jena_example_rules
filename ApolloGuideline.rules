@@ -666,10 +666,7 @@
 					
 [Energy-Rule6: (?a    type:    CHIL:Group6)
 					-> (?a CHIL:hasInitialEnergyRequirement "110" )  (?a CHIL:hasMaxFluidRequirement "180" ) ]
-
-
 					
 [Energy-Rule7: (?a    type:    CHIL:Group1), (?a   CHIL:hasForitifiers   "true" )
 		 -> (?a   CHIL:hasEnergyRequirement   "110 kCal/kg/day" ) (?a   CHIL:hasMaxFluidRequirement   "180 ml/kg/day" ) ]
 					
-

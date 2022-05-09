@@ -21,36 +21,39 @@ import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.util.PrintUtil;
 
 // read 100 cases from csv file type
-public class app4{
-    public static void main(String[] args){
+public class app4 {
+    public static void main(String[] args) {
         Model schema = RDFDataMgr.loadModel("nutritionontology.owl");
         List<Rule> rules = Rule.rulesFromURL("smallruleset.rules");
         Reasoner reasoner = new GenericRuleReasoner(rules);
         reasoner = reasoner.bindSchema(schema);
-        
+
         // Model data = RDFDataMgr.loadModel("");
-        
+
         // InfModel infmodel = ModelFactory.createInfModel(reasoner, data);
 
         // Iterator<Statement> it = infmodel.listStatements();
 
         // listobjects(infmodel);
     }
-    static void resourceinf(InfModel infmodel,String rName){
-        Resource nForce = infmodel.getResource("urn:x-hp:eg/"+rName);
-        System.out.println(rName+" :");
-        printStatements(infmodel,nForce,null,null);
+
+    static void resourceinf(InfModel infmodel, String rName) {
+        Resource nForce = infmodel.getResource("urn:x-hp:eg/" + rName);
+        System.out.println(rName + " :");
+        printStatements(infmodel, nForce, null, null);
     }
-    static void listobjects(InfModel model){
+
+    static void listobjects(InfModel model) {
         NodeIterator ni = model.listObjects();
-        while(ni.hasNext()){
+        while (ni.hasNext()) {
             System.out.println(ni.next());
         }
     }
-    public static void printStatements(Model m, Resource s, Property p, Resource o) { 
-        for (StmtIterator i = m.listStatements(s,p,o); i.hasNext(); ) { 
-            Statement stmt = i.nextStatement(); 
-            System.out.println(" - " + PrintUtil.print(stmt)); 
-        } 
-    } 
+
+    public static void printStatements(Model m, Resource s, Property p, Resource o) {
+        for (StmtIterator i = m.listStatements(s, p, o); i.hasNext();) {
+            Statement stmt = i.nextStatement();
+            System.out.println(" - " + PrintUtil.print(stmt));
+        }
+    }
 }
