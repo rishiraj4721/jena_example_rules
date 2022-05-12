@@ -9,3 +9,15 @@
 [group4rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c), lessThan(?c, 32.0),ge(?c,30.0) -> (?a type: CHIL:Group4)]
 [group5rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c), lessThan(?c, 35.0),ge(?c,32.0) -> (?a type: CHIL:Group5)]
 [group6rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c),  ge(?c,35.0) -> (?a type: CHIL:Group6)]
+
+[demo:(?a CHIL:hasDayOfLife "1106") -> (?a CHIL:hasInitialFeedingVolume   "108")]
+
+[Group1-Rule1: (?a  type:    CHIL:Group1),
+ noValue(?a     CHIL:hasFeedIntolerance),noValue(?a  CHIL:hasNPO)
+(?a     CHIL:hasDayOfLife    ?d), equal(?d,0)
+                     ->  (?a CHIL:hasInitialFeedingVolume  "12" ), (?a CHIL:hasInitialFeedingAdvancement   "0" )]
+
+[Group1-Rule2: (?a    type:    CHIL:Group1),
+ noValue(?a     CHIL:hasFeedIntolerance),noValue(?a  CHIL:hasNPO)
+(?a     CHIL:hasDayOfLife    ?d), equal(?d,1) 
+					-> (?a CHIL:hasInitialFeedingVolume  "24" ) , (?a CHIL:hasInitialFeedingAdvancement   "12

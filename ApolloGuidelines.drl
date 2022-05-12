@@ -1,0 +1,4 @@
+
+rule "group1rule"
+    when
+        $a : Type(CHIL)

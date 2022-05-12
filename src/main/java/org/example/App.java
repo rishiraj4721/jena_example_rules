@@ -1,40 +1,20 @@
 package org.example;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-import java.text.Format;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.chrono.ChronoLocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Collection;
 import java.util.Date;
-import java.util.Dictionary;
-import java.util.HashSet;
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.LinkedList;
+// import java.util.Dictionary;
+// import java.util.Hashtable;
 import java.util.List;
-import java.util.Properties;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
-import org.apache.http.client.cache.Resource;
 import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntClass;
@@ -48,24 +28,21 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.InfModel;
-import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.riot.Lang;
+import org.apache.jena.riot.RDFDataMgr;
+
+import jena.rdfcompare;
+
 import org.apache.jena.reasoner.Reasoner;
-import org.apache.jena.reasoner.ReasonerRegistry;
 import org.apache.jena.reasoner.rulesys.FBRuleReasoner;
 import org.apache.jena.reasoner.rulesys.GenericRuleReasoner;
 import org.apache.jena.reasoner.rulesys.GenericRuleReasonerFactory;
 import org.apache.jena.reasoner.rulesys.Rule;
-import org.apache.jena.util.iterator.ExtendedIterator;
-import org.apache.jena.vocabulary.XSD;
-// import org.apache.jena.rdf.model.RDFWriter;
 
-import com.github.andrewoma.dexx.collection.ArrayList;
-import com.github.andrewoma.dexx.collection.IndexedList;
-import com.sun.tools.javac.code.Attribute.Enum;
 
 /**
  * Hello world!
@@ -96,8 +73,6 @@ public class App {
 
 	static long day[];
 
-	@SuppressWarnings("deprecation")
-
 	public static void main(String[] args) throws FileNotFoundException {
 
 		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_LITE_MEM, null);
@@ -105,7 +80,7 @@ public class App {
 		InputStream in = new FileInputStream(inputFileName);
 		model.read(in, "");
 		String med = "http://www.childhealthimprints.com/SampleOntology/Testing/";
-		org.apache.jena.rdf.model.Resource r = model.getResource(med);
+		// org.apache.jena.rdf.model.Resource r = model.getResource(med);
 
 		hasDayOfLife = model.getProperty(med, "hasDayOfLife");
 		hasFeedIntolerance = model.getProperty(med, "hasFeedIntolerance");
@@ -132,20 +107,20 @@ public class App {
 		Property hasApnea = model.getProperty(med, "hasApnea");
 		Property hasRespiratoryDistress = model.getProperty(med, "hasRespiratoryDistress");
 		Property hasLethargy = model.getProperty(med, "hasLethargy");
-		Property hasTemperatureInStability = model.getProperty(med, "hasTemperatureInStability");
+		// Property hasTemperatureInStability = model.getProperty(med, "hasTemperatureInStability");
 		Property haslowPlateletCount = model.getProperty(med, "haslowPlateletCount");
 		Property hasGastricAspirate = model.getProperty(med, "hasGastricAspirate");
 
-		Property hasXRayAbdominStatus = model.getProperty(med, "hasX-RayAbdominStatus");
+		// Property hasXRayAbdominStatus = model.getProperty(med, "hasX-RayAbdominStatus");
 		Property hasGastricAspirateAbnormalColor = model.getProperty(med, "hasGastricAspirateAbnormalColor");
 		Property hasLongCapillaryRefillTime = model.getProperty(med, "hasLongCapillaryRefillTime");
 		Property hasCentralPeripheralDifference = model.getProperty(med, "hasCentralPeripheralDifference");
-		Property hasTechycardia = model.getProperty(med, "hasTechycardia");
+		// Property hasTechycardia = model.getProperty(med, "hasTechycardia");
 		Property hasBloodPressure = model.getProperty(med, "hasBloodPressure");
 
-		Property hasLowBloodPressure = model.getProperty(med, "hasLowBloodPressure");
+		// Property hasLowBloodPressure = model.getProperty(med, "hasLowBloodPressure");
 		Property hasColdPeripheries = model.getProperty(med, "hasColdPeripheries");
-		Property hasLactateLevel = model.getProperty(med, "hasLactateLevel");
+		// Property hasLactateLevel = model.getProperty(med, "hasLactateLevel");
 		Property hasNecrotizingEnterocolitis = model.getProperty(med, "hasNecrotizingEnterocolitis");
 		Property hasUniqueID = model.getProperty(med, "hasUniqueID");
 
@@ -156,10 +131,10 @@ public class App {
 		Connection con = null;
 
 		Statement stmt = null;
-		Statement stmt1 = null;
+		// Statement stmt1 = null;
 
 		java.sql.ResultSet rec1 = null;
-		java.sql.ResultSet rec2 = null;
+		// java.sql.ResultSet rec2 = null;
 		java.sql.ResultSet rec4 = null;//
 		java.sql.ResultSet rec5 = null;//
 		java.sql.ResultSet rec6 = null;//
@@ -182,28 +157,28 @@ public class App {
 		java.sql.ResultSet rec22 = null;//
 		java.sql.ResultSet rec23 = null;//
 		java.sql.ResultSet rec24 = null;//
-		java.sql.ResultSet rec25 = null;//
+		// java.sql.ResultSet rec25 = null;//
 
 		java.sql.ResultSet uhidrec = null;
 
-		ResultSet rec3 = null;
+		// ResultSet rec3 = null;
 
-		int dayoflife = 0; // this is a field
-		Date entrydatetime = null;
-		Date dobandtime = null;
+		// int dayoflife = 0; // this is a field
+		// Date entrydatetime = null;
+		// Date dobandtime = null;
+		// String totalfeed_ml_per_kg_day;
 		String gestationalweek = null;
-		String totalfeed_ml_per_kg_day;
 		Date dateofadmission;
 		String timeofadmission;
 
-		Double workingweight = (double) 1;
-		Dictionary geek = new Hashtable();
-		String extnum;
-		String[] nextLine;
+		// Double workingweight = (double) 1;
+		// Dictionary geek = new Hashtable();
+		// String extnum;
+		// String[] nextLine;
 		String ph = null; //
 		String be = null; //
-		String chest_comp_time = null; //
-		String word = "";
+		// String chest_comp_time = null; //
+		// String word = "";
 
 		try {
 
@@ -292,7 +267,7 @@ public class App {
 
 			// ****************config file
 			// *******************************************************************
-
+				int countloop=0;
 			while (uhidrec.next()) {
 				uniqueval = uniqueval + 1;
 
@@ -331,7 +306,7 @@ public class App {
 
 					System.out.println("....datetime..");
 
-					SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm:ss");
+					// SimpleDateFormat displayFormat = new SimpleDateFormat("HH:mm:ss");
 					SimpleDateFormat parseFormat = new SimpleDateFormat("hh:mm a");
 					Date date = (Date) parseFormat.parse(reptime);
 					// System.out.println(parseFormat.format(date) + " = " +
@@ -445,7 +420,7 @@ public class App {
 						+ "'";
 				Statement stmt7 = con.createStatement();
 				rec7 = stmt7.executeQuery(query7);
-				int i2 = 0;
+				// int i2 = 0;
 				while (rec7.next()) {
 					pressor = rec7.getString("medicationtype");
 					if (pressor == "TYPE0004") {
@@ -457,11 +432,11 @@ public class App {
 
 				// **************************************************************************
 
-				Individual unique1;
+				// Individual unique1;
 				Date entry_timestamp;
 				String vomit_color;
 
-				String vomit_DOL = null;
+				// String vomit_DOL = null;
 
 				String query8 = " select  vomit,entry_timestamp,vomit_color from apollo.nursing_intake_output WHERE uhid="
 						+ "'" + uhid + "'";
@@ -520,7 +495,7 @@ public class App {
 					// System.out.println(assesstime+"assess time");
 					// System.out.println("9");
 
-					Individual unique_2 = null;
+					// Individual unique_2 = null;
 
 					if (model.getIndividual(med + uhid + "_" + assesstime) == null) {
 
@@ -575,7 +550,7 @@ public class App {
 					System.out.println(assesstime + "assess time");
 					// System.out.println("query10");
 
-					Individual unique_3 = null;
+					// Individual unique_3 = null;
 
 					if (model.getIndividual(med + uhid + "_" + assesstime) == null) {
 
@@ -613,7 +588,7 @@ public class App {
 				while (rec11.next()) {
 					Date assessment_time = rec11.getDate("entry_timestamp");
 
-					String blood_stool = rec11.getString("stool");
+					// String blood_stool = rec11.getString("stool");
 					// System.out.println(blood_stool+"blood in stool");
 
 					long assess = datetime2.getTime() - assessment_time.getTime();
@@ -622,7 +597,7 @@ public class App {
 					// System.out.println(assesstime+"assess time");
 					// System.out.println("query11");
 
-					Individual unique_4 = null;
+					// Individual unique_4 = null;
 
 					if (model.getIndividual(med + uhid + "_" + assesstime) == null) {
 
@@ -672,7 +647,7 @@ public class App {
 					int assesstime = (int) TimeUnit.MILLISECONDS.toDays(assess);
 
 					System.out.println(assesstime + "assess time");
-					Individual unique_5 = null;
+					// Individual unique_5 = null;
 
 					if (model.getIndividual(med + uhid + "_" + assesstime) == null) {
 
@@ -710,7 +685,7 @@ public class App {
 					int assesstime = (int) TimeUnit.MILLISECONDS.toDays(assess);
 
 					System.out.println(assesstime + "assess time");
-					Individual unique_6 = null;
+					// Individual unique_6 = null;
 
 					if (model.getIndividual(med + uhid + "_" + assesstime) == null) {
 
@@ -749,7 +724,7 @@ public class App {
 					System.out.println(assesstime + "assess time");
 					System.out.println("query14");
 
-					Individual unique_7 = null;
+					// Individual unique_7 = null;
 
 					if (model.getIndividual(med + uhid + "_" + assesstime) == null) {
 
@@ -1166,9 +1141,10 @@ public class App {
 
 					}
 
-					if (techycardia.contains("Tachycardia")) {
-						model.addLiteral(unique_1, hasTechycardia, ResourceFactory.createTypedLiteral("true"));
-					}
+					// if (techycardia.contains("Tachycardia")) {
+					// model.addLiteral(unique_1, hasTechycardia,
+					// ResourceFactory.createTypedLiteral("true"));
+					// }
 				}
 
 				// ***********************************************************************************************************************
@@ -1394,16 +1370,22 @@ public class App {
 					 */
 					// }
 
-					List<Rule> rules = Rule.rulesFromURL("ApolloGuideline.rules");
+
+					// String rulesrc = "[group1rule:(?a  type:   CHIL:#Neonate), ( ?a CHIL:hasGestationalAgeAtBirth ?c), lessThan(?c, 26.0) -> (?a type: CHIL:Group1)]";
+					// List<Rule> rules = Rule.parseRules(rulesrc);
+					List<Rule> rules = Rule.rulesFromURL("smallruleset.rules");
 					GenericRuleReasoner reasoner = (GenericRuleReasoner) GenericRuleReasonerFactory.theInstance()
 							.create(null);
+					// Reasoner reasoner = new GenericRuleReasoner(rules);
+					
 					((FBRuleReasoner) reasoner).setRules(rules);
 					((GenericRuleReasoner) reasoner).setMode(GenericRuleReasoner.HYBRID);
-					reasoner.setDerivationLogging(true);
 					InfModel inf = ModelFactory.createInfModel(reasoner, model);
+					// reasoner.setDerivationLogging(true);
+					RDFDataMgr.write(System.out, inf, Lang.TURTLE) ;
 
 					// org.apache.jena.rdf.model.RDFWriter writer = model.getWriter("Turtle");
-					// File file= new File("D:\\CHIL\\Nutrition\\infmodel.ttl");
+					// File file= new File("infmodel.ttl");
 					// writer.write(inf, new FileOutputStream(file), med);
 
 					String test4 = "PREFIX CHIL: <http://www.childhealthimprints.com/SampleOntology/Testing/>"
@@ -1488,10 +1470,11 @@ public class App {
 
 							+ "}orderby ?DayOfLife";
 
-					Query query = QueryFactory.create(test1);
+					Query query = QueryFactory.create(test2);
 					QueryExecution qexec = QueryExecutionFactory.create(query, inf);
+					// QueryExecution qexec = QueryExecutionFactory.create(query, model);
 					ResultSet rs = qexec.execSelect();
-					// ResultSetFormatter.out(System.out, rs, query);
+					ResultSetFormatter.out(System.out, rs, query);
 
 					/*
 					 * String vomitvol="";
@@ -1524,8 +1507,8 @@ public class App {
 					System.out.println(vars + "varssssssssssss");
 
 					while (rs.hasNext()) { // iterate over the result
-
-						int counter = 0;
+						System.out.println("hii--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+						
 						QuerySolution qs = rs.nextSolution();
 						System.out.println("solu");
 						String uhidValue = "";
@@ -1561,10 +1544,10 @@ public class App {
 						String vomitcolor_s = "";
 						String abdominaldist_s = "";
 						String visiblebowel_s = "";
-						String abdtender_s1 = "";
-						String abdtender_s11 = "";
+						// String abdtender_s1 = "";
+						// String abdtender_s11 = "";
 						String abdominaltender_s = "";
-						String visiblebowel_s1 = "";
+						// String visiblebowel_s1 = "";
 						String bloodstool_s = "";
 						String metabolic_s = "";
 						String respdistress_s = "";
@@ -1899,7 +1882,11 @@ public class App {
 					 */
 
 				}
-
+				if (countloop == 1){
+					break;
+				}
+				// System.out.println("--------------------------------------------");
+				countloop++;
 			}
 		}
 
